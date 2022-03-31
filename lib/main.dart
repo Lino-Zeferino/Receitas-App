@@ -1,10 +1,10 @@
-import 'package:aula02/views/splashPage.dart';
+//import 'package:aula02/views/splashPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'controllers/controller_theme.dart';
 import 'desavio_login/controller_login.dart';
-//import 'desavio_login/login_screen.dart';
+import 'desavio_login/login_screen.dart';
 
 void main() {
   runApp(
@@ -29,7 +29,7 @@ void main() {
                     ? Brightness.dark
                     : Brightness.light,
               ),
-              home: const SplashPage(),
+              home: LoginScreen(),
               // const LoginScreen()  const SplashPage(),
             ),
           );
