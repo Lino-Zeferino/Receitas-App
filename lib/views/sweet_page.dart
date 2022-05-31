@@ -1,3 +1,4 @@
+import 'package:aula02/components/sweet_page_item.dart';
 import 'package:aula02/controllers/controller_theme.dart';
 import 'package:aula02/views/dictionary_page.dart';
 import 'package:aula02/views/drinkPage.dart';
@@ -11,9 +12,7 @@ class SweetPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text("ola doces"),
-      ),
+      body: const SweetPageItem(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
         onPressed: () {},

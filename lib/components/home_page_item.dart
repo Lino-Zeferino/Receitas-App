@@ -1,9 +1,13 @@
 // ignore_for_file: sized_box_for_whitespace, non_constant_identifier_names
 
+import 'package:aula02/controllers/controller_meals_provider.dart';
 import 'package:aula02/controllers/controller_theme.dart';
 import 'package:aula02/views/app_drawe.dart';
+import 'package:aula02/views/meals_page.dart';
+import 'package:aula02/views/revenue_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 class HomePageItem extends StatelessWidget {
   const HomePageItem({Key? key}) : super(key: key);
@@ -53,6 +57,9 @@ class HomePageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ControllerMeals mealsProvier = Provider.of<ControllerMeals>(context);
+    final meals = mealsProvier.items;
+
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: Theme.of(context).primaryColor,
@@ -153,24 +160,41 @@ class HomePageItem extends StatelessWidget {
               height: 100,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 15,
+                  itemCount: meals.length,
                   itemBuilder: (context, i) {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Padding(
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return RevenuePage(meals[i].meal[i]);
+                            }));
+                          },
+                          child: Padding(
                             padding: const EdgeInsets.only(right: 8.0),
                             child: MyCicloImage(
                               radius: 30,
-                              url: "assets/images/tipicoAngola2.jpg",
-                            )),
+                              url: meals[i].meal[i].isFavorite
+                                  ? ""
+                                  : meals[i].meal[i].image,
+                            ),
+                          ),
+                        ),
                         const SizedBox(
                           height: 2,
                         ),
-                        const Text(
-                          "title",
-                          style: TextStyle(
-                            fontSize: 14,
+                        Container(
+                          width: 80,
+                          //color: Colors.amber,
+                          margin: const EdgeInsets.all(2),
+                          child: Text(
+                            meals[i].meal[i].title,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 14,
+                            ),
                           ),
                         ),
                       ],
@@ -185,18 +209,23 @@ class HomePageItem extends StatelessWidget {
                   reverse: true,
                   // shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  itemCount: 5,
+                  itemCount: meals.length,
                   itemBuilder: (_, i) {
                     return Stack(children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return MealsPage(meals[i]);
+                          }));
+                        },
                         splashColor: Colors.black45,
                         child: MyRadiusImage(
                           circular: 12,
                           comprimento: 230,
                           largura: size.width * .52,
                           margin: 8,
-                          url: "assets/images/fundo.jpg",
+                          url: meals[i].image,
                         ),
                       ),
                       Container(
@@ -211,7 +240,7 @@ class HomePageItem extends StatelessWidget {
                                 largura: 30,
                                 comprimento: 30,
                                 margin: 0.0,
-                                url: "assets/images/angola.png",
+                                url: meals[i].imageCountry,
                                 circular: 12,
                               ),
                             ),
@@ -227,28 +256,22 @@ class HomePageItem extends StatelessWidget {
                               width: size.width * .52,
                               height: size.height * .10,
                               child: ListTile(
-                                title: const Text(
-                                  "Angola",
-                                  style: TextStyle(
+                                title: Text(
+                                  meals[i].country,
+                                  style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 18,
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
-                                subtitle: const Text(
-                                  "Vê as adversidades de receitas de Angola",
-                                  style: TextStyle(
+                                subtitle: Text(
+                                  meals[i].description,
+                                  style: const TextStyle(
                                     color: Colors.white70,
                                     fontSize: 12,
-                                    fontWeight: FontWeight.w900,
+                                    //fontWeight: FontWeight.w400,
                                   ),
                                 ),
-                                trailing: IconButton(
-                                    onPressed: () {},
-                                    icon: const Icon(
-                                      Icons.favorite_border,
-                                      color: Colors.orange,
-                                    )),
                               ),
                             ),
                           ],
@@ -292,7 +315,7 @@ class HomePageItem extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                             image: const DecorationImage(
                               image: AssetImage(
-                                "assets/images/tipicoAngola2.jpg",
+                                "assets/images/angola/tipicoAngola2.jpg",
                               ),
                               fit: BoxFit.cover,
                             ),

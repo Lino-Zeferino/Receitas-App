@@ -1,6 +1,8 @@
 import 'package:aula02/controllers/controller_theme.dart';
-import 'package:aula02/views/app_rules.dart';
-import 'package:aula02/views/favorite_page.dart';
+import 'package:aula02/views/menu/about_dev.dart';
+import 'package:aula02/views/menu/add_meal.dart';
+import 'package:aula02/views/menu/app_rules.dart';
+import 'package:aula02/views/menu/favorite_page.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawe extends StatelessWidget {
@@ -16,7 +18,13 @@ class AppDrawe extends StatelessWidget {
           child: Column(
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) {
+                      return const AboutDev();
+                    }),
+                  );
+                },
                 splashColor: Colors.orange,
                 child: Container(
                   color: Colors.black54,
@@ -53,7 +61,7 @@ class AppDrawe extends StatelessWidget {
                                 "\tSobre o Desenvolvidor",
                                 style: TextStyle(
                                   fontSize: 16,
-                                  color: Colors.grey,
+                                  color: Colors.white60,
                                 ),
                               ),
                             ],
@@ -108,7 +116,11 @@ class AppDrawe extends StatelessWidget {
                 thickness: 2,
               ),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return AddMeal();
+                  }));
+                },
                 leading: CircleAvatar(
                   backgroundColor: Colors.grey.withOpacity(0.8),
                   child: const Icon(

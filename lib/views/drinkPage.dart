@@ -1,4 +1,6 @@
-// ignore: file_names
+// ignore_for_file: file_names
+
+import 'package:aula02/components/drink_page_item.dart';
 import 'package:aula02/controllers/controller_theme.dart';
 import 'package:aula02/views/dictionary_page.dart';
 import 'package:aula02/views/home_page.dart';
@@ -11,9 +13,7 @@ class DrinkPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text("ola Bebidas"),
-      ),
+      body: const DrinkPageItem(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
         onPressed: () {},

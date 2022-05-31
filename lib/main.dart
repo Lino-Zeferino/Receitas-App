@@ -1,10 +1,8 @@
-//import 'package:aula02/views/splashPage.dart';
+import 'package:aula02/views/splashPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'controllers/controller_meals_provider.dart';
 import 'controllers/controller_theme.dart';
-import 'desavio_login/controller_login.dart';
-import 'desavio_login/login_screen.dart';
 
 void main() {
   runApp(
@@ -17,7 +15,7 @@ void main() {
                 create: (_) => ControllerTheme(),
               ),
               ChangeNotifierProvider(
-                create: (_) => ControllerLogin(),
+                create: (_) => ControllerMeals(),
               ),
             ],
             child: MaterialApp(
@@ -29,8 +27,7 @@ void main() {
                     ? Brightness.dark
                     : Brightness.light,
               ),
-              home: LoginScreen(),
-              // const LoginScreen()  const SplashPage(),
+              home: const SplashPage(),
             ),
           );
         }),

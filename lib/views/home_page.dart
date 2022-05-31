@@ -2,6 +2,7 @@ import 'package:aula02/components/home_page_item.dart';
 import 'package:aula02/controllers/controller_theme.dart';
 import 'package:aula02/views/dictionary_page.dart';
 import 'package:aula02/views/drinkPage.dart';
+import 'package:aula02/views/menu/add_meal.dart';
 import 'package:aula02/views/sweet_page.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,11 @@ class _HomePageState extends State<HomePage> {
       body: const HomePageItem(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return AddMeal();
+          }));
+        },
         child: const Icon(
           Icons.add,
           color: Colors.white,
