@@ -2,7 +2,7 @@ import 'package:aula02/controllers/controller_theme.dart';
 import 'package:aula02/views/menu/about_dev.dart';
 import 'package:aula02/views/menu/add_meal.dart';
 import 'package:aula02/views/menu/app_rules.dart';
-import 'package:aula02/views/menu/favorite_page.dart';
+
 import 'package:flutter/material.dart';
 
 class AppDrawe extends StatelessWidget {
@@ -64,30 +64,20 @@ class AppDrawe extends StatelessWidget {
                                   color: Colors.white60,
                                 ),
                               ),
+                              Text(
+                                "\t\tCliqui aqui para saber mais... ",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.white60,
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ],
                     ),
                   ),
-                ),
-              ),
-              const Divider(),
-              ListTile(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) {
-                      return const FavoritePage();
-                    }),
-                  );
-                },
-                leading: const Icon(
-                  Icons.favorite,
-                  size: 28,
-                ),
-                title: const Text(
-                  "Favoritos",
-                  style: TextStyle(fontSize: 18),
                 ),
               ),
               const Divider(

@@ -77,87 +77,105 @@ class RevenuePage extends StatelessWidget {
                         SizedBox(
                           height: size.height * .01,
                         ),
-                        Row(
-                          children: [
-                            component(const Icon(Icons.watch_later_outlined),
-                                meal.duration),
-                            component(
-                                const Icon(Icons.people_outline), meal.people),
-                            SizedBox(
-                              width: size.width * .04,
-                            ),
-                            Text(
-                              "Por: ",
-                              style: TextStyle(
-                                color: ControllerTheme.istance.opcao
-                                    ? Colors.white70
-                                    : Colors.black54,
-                                fontSize: 14,
-                              ),
-                            ),
-                            Text(
-                              meal.by,
-                              style: TextStyle(
-                                color: ControllerTheme.istance.opcao
-                                    ? Colors.white70
-                                    : Colors.black54,
-                                fontSize: 14,
-                              ),
-                            ),
-                          ],
-                        ),
                         SizedBox(
-                          height: size.height * .02,
-                        ),
-                        const Text(
-                          "\t\tIngredientes:",
-                          style: TextStyle(
-                            color: Colors.orange,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18,
-                          ),
-                        ),
-                        Card(
-                          elevation: 2,
-                          child: SizedBox(
-                            height: size.height * .15,
-                            child: ListView.builder(
-                                itemCount: 10,
-                                itemBuilder: (_, i) {
-                                  return Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: Text(meal.ingredient),
-                                  );
-                                }),
-                          ),
-                        ),
-                        SizedBox(
-                          height: size.height * .01,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(bottom: 8.0),
-                          child: Text(
-                            "\tModo de Preparo:",
-                            style: TextStyle(
-                              color: Colors.orange,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                        Card(
-                          //color: Colors.white70,
-                          elevation: 0,
-                          child: SizedBox(
-                            height: size.height * .19,
-                            child: ListView.builder(
-                                itemCount: 25,
-                                itemBuilder: (_, i) {
-                                  return Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: Text(meal.preparation),
-                                  );
-                                }),
+                          height: size.height * .47,
+                          child: ListView(
+                            children: [
+                              Row(
+                                children: [
+                                  component(
+                                      const Icon(Icons.watch_later_outlined),
+                                      meal.duration),
+                                  component(const Icon(Icons.people_outline),
+                                      meal.people),
+                                  SizedBox(
+                                    width: size.width * .04,
+                                  ),
+                                  Text(
+                                    "Por: ",
+                                    style: TextStyle(
+                                      color: ControllerTheme.istance.opcao
+                                          ? Colors.white70
+                                          : Colors.black54,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 88,
+                                    child: Text(
+                                      meal.by,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        color: ControllerTheme.istance.opcao
+                                            ? Colors.white70
+                                            : Colors.black54,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: size.height * .02,
+                              ),
+                              const Text(
+                                "\t\tIngredientes:",
+                                style: TextStyle(
+                                  color: Colors.orange,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18,
+                                ),
+                              ),
+                              Card(
+                                elevation: 2,
+                                child: SizedBox(
+                                  width: double.infinity,
+                                  height: size.height * .15,
+                                  child: SingleChildScrollView(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        meal.ingredient,
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: size.height * .01,
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.only(bottom: 8.0),
+                                child: Text(
+                                  "\tModo de Preparo:",
+                                  style: TextStyle(
+                                    color: Colors.orange,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                              Card(
+                                elevation: 0,
+                                child: SizedBox(
+                                  height: size.height * .19,
+                                  child: SingleChildScrollView(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: Text(
+                                        meal.preparation,
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],

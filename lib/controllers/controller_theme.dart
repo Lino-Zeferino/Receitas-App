@@ -8,9 +8,4 @@ class ControllerTheme with ChangeNotifier {
     opcao = !opcao;
     notifyListeners();
   }
-
-  chengePassword() {
-    statePassword = !statePassword;
-    notifyListeners();
-  }
 }

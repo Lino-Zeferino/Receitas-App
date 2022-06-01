@@ -11,55 +11,9 @@ import 'package:provider/provider.dart';
 
 class HomePageItem extends StatelessWidget {
   const HomePageItem({Key? key}) : super(key: key);
-  Widget MyCicloImage({
-    required double radius,
-    required String url,
-  }) {
-    return CircleAvatar(
-      backgroundColor: Colors.orange,
-      radius: radius,
-      child: Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          image: DecorationImage(
-            image: AssetImage(
-              url,
-            ),
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget MyRadiusImage({
-    required double largura,
-    required double comprimento,
-    required double margin,
-    required String url,
-    required double circular,
-  }) {
-    return Container(
-      width: largura,
-      height: comprimento,
-      margin: EdgeInsets.only(right: margin),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        image: DecorationImage(
-          image: AssetImage(
-            url,
-          ),
-          fit: BoxFit.cover,
-        ),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
-    final ControllerMeals mealsProvier = Provider.of<ControllerMeals>(context);
-    final meals = mealsProvier.items;
-
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: Theme.of(context).primaryColor,
@@ -107,6 +61,9 @@ class HomePageItem extends StatelessWidget {
         },
       ),
     );
+    /* Trasendo a Lista de Dados proveniente do providercontroller */
+    final mealsProvier = Provider.of<ControllerMeals>(context);
+    final meals = mealsProvier.items;
     var size = MediaQuery.of(context).size;
     var sizeHeight = (size.height - appBar.preferredSize.height) -
         MediaQuery.of(context).padding.top;
@@ -167,10 +124,12 @@ class HomePageItem extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return RevenuePage(meals[i].meal[i]);
-                            }));
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return RevenuePage(meals[i].meal[i]);
+                              }),
+                            );
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(right: 8.0),
@@ -330,45 +289,48 @@ class HomePageItem extends StatelessWidget {
       ),
     );
   }
-}
 
-/**
- * 
- *  Container(
-                        alignment: Alignment.topCenter,
-                        margin: const EdgeInsets.only(top: 150),
-                        decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(.8),
-                          borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(12),
-                            bottomRight: Radius.circular(12),
-                          ),
-                        ),
-                        width: size.width * .52,
-                        height: 80,
-                        child: ListTile(
-                          title: const Text(
-                            "Angola",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          subtitle: const Text(
-                            "Vê as adversidades de receitas de Angola",
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w900,
-                            ),
-                          ),
-                          trailing: IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.favorite_border,
-                                color: Colors.orange,
-                              )),
-                        ),
-                      ),
- */
+  Widget MyCicloImage({
+    required double radius,
+    required String url,
+  }) {
+    return CircleAvatar(
+      backgroundColor: Colors.orange,
+      radius: radius,
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AssetImage(
+              url,
+            ),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget MyRadiusImage({
+    required double largura,
+    required double comprimento,
+    required double margin,
+    required String url,
+    required double circular,
+  }) {
+    return Container(
+      width: largura,
+      height: comprimento,
+      margin: EdgeInsets.only(right: margin),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        image: DecorationImage(
+          image: AssetImage(
+            url,
+          ),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+}

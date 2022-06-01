@@ -21,8 +21,8 @@ class MealsItem extends StatelessWidget {
       margin: EdgeInsets.only(right: margin),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+          topLeft: Radius.circular(15),
+          topRight: Radius.circular(15),
         ),
         image: DecorationImage(
           image: AssetImage(
@@ -60,18 +60,16 @@ class MealsItem extends StatelessWidget {
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 0,
-                mainAxisSpacing: 16,
+                crossAxisSpacing: 4,
+                mainAxisSpacing: 8,
               ),
               primary: false,
               shrinkWrap: true,
               itemCount: meals.meal.length,
               itemBuilder: (_, i) {
                 return Padding(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(6),
                   child: Container(
-                    height: 100,
-                    width: 100,
                     decoration: BoxDecoration(
                       color: ControllerTheme.istance.opcao
                           ? Colors.black
@@ -83,10 +81,10 @@ class MealsItem extends StatelessWidget {
                         )
                       ],
                       borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                        bottomLeft: Radius.circular(15),
+                        bottomRight: Radius.circular(15),
                       ),
                     ),
                     child: Column(
@@ -102,7 +100,7 @@ class MealsItem extends StatelessWidget {
                               },
                               child: MyRadiusImage(
                                 largura: double.infinity,
-                                comprimento: size.height * .16,
+                                comprimento: 125,
                                 margin: 0.0,
                                 url: meals.meal[i].image,
                                 circular: 20,
@@ -123,18 +121,18 @@ class MealsItem extends StatelessWidget {
                         Expanded(
                           child: ListTile(
                             dense: false,
-                            title: Text(
-                              meals.meal[i].title,
-                              style: TextStyle(
+                            title: Padding(
+                              padding: const EdgeInsets.only(bottom: 12.0),
+                              child: Text(
+                                meals.meal[i].title,
+                                style: TextStyle(
                                   color: ControllerTheme.istance.opcao
                                       ? Colors.white
                                       : Colors.black,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            subtitle: Text(
-                              meals.meal[i].description,
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.w600),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                overflow: TextOverflow.clip,
+                              ),
                             ),
                             trailing: IconButton(
                               onPressed: () {},
