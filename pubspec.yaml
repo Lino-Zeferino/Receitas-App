@@ -63,6 +63,8 @@ flutter:
     - assets/images/franca/
     - assets/images/portugal/
     - assets/images/diverso/
+    - assets/images/doces/
+    - assets/images/bebidas/
  
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

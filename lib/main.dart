@@ -1,3 +1,5 @@
+import 'package:aula02/controllers/controller_sweet_provider.dart';
+import 'package:aula02/controllers/crontroller_drink_provider.dart';
 import 'package:aula02/views/splashPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,6 +18,12 @@ void main() {
               ),
               ChangeNotifierProvider(
                 create: (_) => ControllerMeals(),
+              ),
+              ChangeNotifierProvider(
+                create: (_) => ControllerSweet(),
+              ),
+              ChangeNotifierProvider(
+                create: (_) => ControllerDrink(),
               ),
             ],
             child: MaterialApp(

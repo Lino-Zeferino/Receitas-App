@@ -1,10 +1,12 @@
 // ignore_for_file: sized_box_for_whitespace, non_constant_identifier_names
 
 import 'package:aula02/controllers/controller_meals_provider.dart';
+import 'package:aula02/controllers/controller_sweet_provider.dart';
 import 'package:aula02/controllers/controller_theme.dart';
 import 'package:aula02/views/app_drawe.dart';
 import 'package:aula02/views/meals_page.dart';
 import 'package:aula02/views/revenue_page.dart';
+import 'package:aula02/views/revenue_ssweet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -64,6 +66,8 @@ class HomePageItem extends StatelessWidget {
     /* Trasendo a Lista de Dados proveniente do providercontroller */
     final mealsProvier = Provider.of<ControllerMeals>(context);
     final meals = mealsProvier.items;
+    final sweetProvier = Provider.of<ControllerSweet>(context);
+    final sweet = sweetProvier.items;
     var size = MediaQuery.of(context).size;
     var sizeHeight = (size.height - appBar.preferredSize.height) -
         MediaQuery.of(context).padding.top;
@@ -242,7 +246,7 @@ class HomePageItem extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(top: 12, bottom: 8),
               child: Text(
-                "Doces e Bebidas Destacadas",
+                "Doces Destacadas",
                 style: TextStyle(
                   fontSize: 16,
                   // fontWeight: FontWeight.w700,
@@ -254,34 +258,58 @@ class HomePageItem extends StatelessWidget {
               height: 200,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 4,
+                  itemCount: sweetProvier.listaFavorite().length,
                   itemBuilder: (_, i) {
-                    return Stack(children: [
-                      InkWell(
-                        onTap: () {},
-                        splashColor: Colors.black26,
-                        child: Container(
-                          width: size.width,
-                          height: 180,
-                          margin: const EdgeInsets.only(right: 8),
-                          decoration: BoxDecoration(
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.black45,
-                                blurRadius: 3,
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return RevenueSweetPage(
+                              sweetProvier.listaFavorite()[i]);
+                        }));
+                      },
+                      splashColor: Colors.black26,
+                      child: Stack(
+                          alignment: AlignmentDirectional.bottomCenter,
+                          children: [
+                            Container(
+                              width: size.width,
+                              height: 180,
+                              margin: const EdgeInsets.only(right: 12),
+                              decoration: BoxDecoration(
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.black45,
+                                    blurRadius: 3,
+                                  ),
+                                ],
+                                borderRadius: BorderRadius.circular(12),
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      sweetProvier.listaFavorite()[i].image),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
-                            ],
-                            borderRadius: BorderRadius.circular(12),
-                            image: const DecorationImage(
-                              image: AssetImage(
-                                "assets/images/angola/tipicoAngola2.jpg",
-                              ),
-                              fit: BoxFit.cover,
                             ),
-                          ),
-                        ),
-                      ),
-                    ]);
+                            Container(
+                              padding: const EdgeInsets.only(bottom: 8),
+                              height: 60,
+                              width: size.width * .98,
+                              decoration: BoxDecoration(
+                                color: Colors.black45,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Text(
+                                sweetProvier.listaFavorite()[i].title,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ]),
+                    );
                   }),
             ),
           ],
