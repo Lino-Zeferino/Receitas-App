@@ -1,4 +1,6 @@
-class DrinkModel {
+import 'package:flutter/cupertino.dart';
+
+class DrinkModel with ChangeNotifier {
   final String id;
   final String title;
   final String ingredient;
@@ -17,6 +19,10 @@ class DrinkModel {
     required this.preparation,
     required this.image,
     required this.by,
-    required this.isFavorite,
+    this.isFavorite = false,
   });
+  void changeFavorite() {
+    isFavorite = !isFavorite;
+    notifyListeners();
+  }
 }

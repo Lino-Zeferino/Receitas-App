@@ -108,7 +108,7 @@ class AppDrawe extends StatelessWidget {
               ListTile(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return AddMeal();
+                    return const AddMeal();
                   }));
                 },
                 leading: CircleAvatar(

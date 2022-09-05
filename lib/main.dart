@@ -1,9 +1,12 @@
+import 'package:aula02/controllers/controller_meals_provider.dart';
 import 'package:aula02/controllers/controller_sweet_provider.dart';
 import 'package:aula02/controllers/crontroller_drink_provider.dart';
+import 'package:aula02/views/meals_page.dart';
 import 'package:aula02/views/splashPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'controllers/controller_meals_provider.dart';
+import 'controllers/controller_dictionary_provider.dart';
+import 'controllers/controller_country_provider.dart';
 import 'controllers/controller_theme.dart';
 
 void main() {
@@ -20,10 +23,16 @@ void main() {
                 create: (_) => ControllerMeals(),
               ),
               ChangeNotifierProvider(
+                create: (_) => ControllerCoutry(),
+              ),
+              ChangeNotifierProvider(
                 create: (_) => ControllerSweet(),
               ),
               ChangeNotifierProvider(
                 create: (_) => ControllerDrink(),
+              ),
+              ChangeNotifierProvider(
+                create: (_) => ControllerDictionary(),
               ),
             ],
             child: MaterialApp(
@@ -36,6 +45,9 @@ void main() {
                     : Brightness.light,
               ),
               home: const SplashPage(),
+              routes: {
+                "/meals_page": (ctx) => const MealsPage(),
+              },
             ),
           );
         }),

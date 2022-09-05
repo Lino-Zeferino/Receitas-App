@@ -1,4 +1,5 @@
 import 'package:aula02/controllers/controller_theme.dart';
+import 'package:aula02/views/menu/add_off.dart';
 import 'package:flutter/material.dart';
 
 class AboutDevItem2 extends StatelessWidget {
@@ -40,7 +41,7 @@ class AboutDevItem2 extends StatelessWidget {
             "Bom Relacionamento interpessoal, desposição de agir em trabalhor, em equipe ou individual, facilidade de comunicação e aprendizagem, responsabilidade, organização, criatividade e dedicação.",
             style: TextStyle(
               color:
-                  ControllerTheme.istance.opcao ? Colors.white : Colors.black,
+                  ControllerTheme.istance.opcao ? Colors.white : Colors.black87,
               fontSize: 12,
             ),
             textAlign: TextAlign.justify,
@@ -56,7 +57,7 @@ class AboutDevItem2 extends StatelessWidget {
             style: TextStyle(
               color:
                   ControllerTheme.istance.opcao ? Colors.white : Colors.black,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w600,
               fontSize: 12,
             ),
           ),
@@ -64,7 +65,7 @@ class AboutDevItem2 extends StatelessWidget {
             "Estudadente de CIÊNCIAS DA COMPUTAÇÃO(FCUAN) desde o Ano de 2020 até a data presente.",
             style: TextStyle(
               color:
-                  ControllerTheme.istance.opcao ? Colors.white : Colors.black,
+                  ControllerTheme.istance.opcao ? Colors.white : Colors.black87,
               fontSize: 12,
             ),
             textAlign: TextAlign.justify,
@@ -80,7 +81,7 @@ class AboutDevItem2 extends StatelessWidget {
             style: TextStyle(
               color:
                   ControllerTheme.istance.opcao ? Colors.white : Colors.black,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w600,
               fontSize: 12,
             ),
           ),
@@ -88,7 +89,7 @@ class AboutDevItem2 extends StatelessWidget {
             "1-Trabalhei como formador de Informática da óptica do Utilidador por cerca de 3 anos(2016-2019).\n2-Trabalhei como formador de Lógica De Programação(C, JAVA)  por cerca de 1 anos(2019-2020).",
             style: TextStyle(
               color:
-                  ControllerTheme.istance.opcao ? Colors.white : Colors.black,
+                  ControllerTheme.istance.opcao ? Colors.white : Colors.black87,
               fontSize: 12,
             ),
             textAlign: TextAlign.justify,
@@ -98,7 +99,7 @@ class AboutDevItem2 extends StatelessWidget {
             style: TextStyle(
               color:
                   ControllerTheme.istance.opcao ? Colors.white : Colors.black,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w600,
               fontSize: 12,
             ),
           ),
@@ -106,7 +107,7 @@ class AboutDevItem2 extends StatelessWidget {
             "1-Conversor de bases(Binária, Octal, Decimal, HexDecimal e de Unidades de Medias de Informação).\n2-APP de agenda e despesas Pessoais\n3-Clonagem do Multicaixa Express\n4-Loja Virtual\n5-Participei num projecto de Achados e Perdidos, que foi feito em equipe como Front-end...",
             style: TextStyle(
               color:
-                  ControllerTheme.istance.opcao ? Colors.white : Colors.black,
+                  ControllerTheme.istance.opcao ? Colors.white : Colors.black87,
               fontSize: 12,
             ),
             textAlign: TextAlign.justify,
@@ -115,13 +116,22 @@ class AboutDevItem2 extends StatelessWidget {
             height: 12,
             color: Colors.orange,
           ),
-          MyTitle("OBJETIVO"),
+          InkWell(
+            onLongPress: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const AddMealOff(),
+                  ));
+            },
+            child: MyTitle("OBJETIVO"),
+          ),
           const SizedBox(height: 4),
           Text(
             "Sou um Dev Mobile presistente e altamente dedicado.\nProcurando uma posição nas áreas de Desenvolvidor de Aplicações Mobile(Flutter), para poder dar o meu contributo para o desenvolvimento das TICs .",
             style: TextStyle(
               color:
-                  ControllerTheme.istance.opcao ? Colors.white : Colors.black,
+                  ControllerTheme.istance.opcao ? Colors.white : Colors.black87,
               fontSize: 12,
             ),
             textAlign: TextAlign.justify,

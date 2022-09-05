@@ -53,9 +53,7 @@ class AboutDevItem1 extends StatelessWidget {
           // color: Colors.blue,
           child: Text(
             txt,
-            style: const TextStyle(
-              color: Colors.white,
-            ),
+            style: const TextStyle(color: Colors.white, fontSize: 12),
           ),
         ),
         const SizedBox(
@@ -127,7 +125,7 @@ class AboutDevItem1 extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-          informacoes("Data Nascimento", "22/03/2000"),
+          informacoes("Data Nascimento", "22/03/1999"),
           const SizedBox(
             height: 8,
           ),

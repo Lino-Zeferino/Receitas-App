@@ -2,11 +2,12 @@ import 'package:aula02/controllers/controller_theme.dart';
 import 'package:aula02/models/meal_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 class RevenuePage extends StatelessWidget {
-  final MealModel meal;
   // ignore: use_key_in_widget_constructors
-  const RevenuePage(this.meal);
+  const RevenuePage();
 
   Widget component(Icon ic, String text) {
     return Container(
@@ -42,6 +43,7 @@ class RevenuePage extends StatelessWidget {
       ),
     );
     var size = MediaQuery.of(context).size;
+    final meal = Provider.of<MealModel>(context);
     return Scaffold(
       body: Container(
           margin: const EdgeInsets.only(top: 24, left: 4, right: 4),
@@ -164,7 +166,11 @@ class RevenuePage extends StatelessWidget {
                                   height: size.height * .19,
                                   child: SingleChildScrollView(
                                     child: Padding(
-                                      padding: const EdgeInsets.all(4.0),
+                                      padding: const EdgeInsets.only(
+                                          top: 4.0,
+                                          left: 4,
+                                          right: 4,
+                                          bottom: 24),
                                       child: Text(
                                         meal.preparation,
                                         style: const TextStyle(
@@ -226,6 +232,7 @@ class RevenuePage extends StatelessWidget {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
                     onPressed: () {
@@ -237,20 +244,31 @@ class RevenuePage extends StatelessWidget {
                     width: size.width * .6,
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Share.share(
+                          "Aprenda como Fazer: ${meal.title}\n\nDuração:${meal.duration}\nQuantidade:${meal.people}Pessoas\nPor: @Okuteleka\n\nIgrediente:\n${meal.ingredient}\n\nModo de preparo:\n${meal.preparation}\n\n Bom Apetiti");
+                    },
                     icon: const Icon(Icons.share),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                    ),
-                  )
                 ],
               )
             ],
           )),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        onPressed: () {
+          meal.changeFavorite();
+        },
+        child: meal.isFavorite
+            ? const Icon(
+                Icons.favorite,
+                color: Colors.orange,
+              )
+            : const Icon(
+                Icons.favorite_border,
+                color: Colors.orange,
+              ),
+      ),
     );
   }
 }

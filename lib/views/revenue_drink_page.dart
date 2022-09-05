@@ -1,13 +1,13 @@
 import 'package:aula02/controllers/controller_theme.dart';
 import 'package:aula02/models/drink_model.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 class RevenueDrinkPage extends StatelessWidget {
-  final DrinkModel drink;
   // ignore: use_key_in_widget_constructors
-  const RevenueDrinkPage(this.drink);
+  const RevenueDrinkPage();
 
   Widget component(Icon ic, String text) {
     return Container(
@@ -24,6 +24,7 @@ class RevenueDrinkPage extends StatelessWidget {
           ic,
           Text(
             text,
+            overflow: TextOverflow.ellipsis,
             style: const TextStyle(color: Colors.white, fontSize: 14),
           )
         ],
@@ -43,6 +44,7 @@ class RevenueDrinkPage extends StatelessWidget {
       ),
     );
     var size = MediaQuery.of(context).size;
+    final DrinkModel drink = Provider.of<DrinkModel>(context);
     return Scaffold(
       body: Container(
           margin: const EdgeInsets.only(top: 24, left: 4, right: 4),
@@ -227,6 +229,7 @@ class RevenueDrinkPage extends StatelessWidget {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
                     onPressed: () {
@@ -238,20 +241,31 @@ class RevenueDrinkPage extends StatelessWidget {
                     width: size.width * .6,
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Share.share(
+                          "Aprenda como Fazer: ${drink.title}\n\nDuração:${drink.duration}\nQuantidade:${drink.people}Pessoas\nPor: @Okuteleka\n\nIgrediente:\n${drink.ingredient}\n\nModo de preparo:\n${drink.preparation}\n\n Bom Apetiti");
+                    },
                     icon: const Icon(Icons.share),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                    ),
-                  )
                 ],
               )
             ],
           )),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        onPressed: () {
+          drink.changeFavorite();
+        },
+        child: drink.isFavorite
+            ? const Icon(
+                Icons.favorite,
+                color: Colors.orange,
+              )
+            : const Icon(
+                Icons.favorite_border,
+                color: Colors.orange,
+              ),
+      ),
     );
   }
 }

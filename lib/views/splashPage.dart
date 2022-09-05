@@ -3,6 +3,7 @@
 import 'dart:async' show Timer;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'home_page.dart';
 
@@ -35,6 +36,7 @@ class _SplashPageState extends State<SplashPage> {
   initState() {
     super.initState();
     startTimer();
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   }
 
   @override

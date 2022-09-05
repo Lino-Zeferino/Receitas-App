@@ -1,18 +1,14 @@
-import 'package:aula02/models/meal_model.dart';
-
-class MealcountryModel {
+class CountryModel {
   final String country;
   final String description;
   final String image;
   final String imageCountry;
-  final List<MealModel> meal;
 
-  MealcountryModel({
+  CountryModel({
     required this.country,
     required this.description,
     required this.image,
     required this.imageCountry,
-    required this.meal,
   });
   /* List<MealModel> getMeal() {
     int k;

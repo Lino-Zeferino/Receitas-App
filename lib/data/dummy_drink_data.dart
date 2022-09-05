@@ -18,7 +18,7 @@ final List<DrinkModel> DUMMY_DRINK = [
   DrinkModel(
     id: "d2",
     title: "VITAMINA DE ABACATE",
-    people: "1/2 Pessoas",
+    people: "2 Pessoas",
     duration: "5min",
     ingredient:
         "1-  1 Abacate\n\n2-  1 copo de leite gelado\n\n3-  2 colheres de sopa de mel \n\n4-  1 colher de chá de canela\n\n5-  1 banana (opcional)",

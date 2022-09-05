@@ -1,5 +1,7 @@
 // ignore: camel_case_types
-class MealModel {
+import 'package:flutter/cupertino.dart';
+
+class MealModel with ChangeNotifier {
   final String id;
   final String title;
   final String country;
@@ -23,6 +25,11 @@ class MealModel {
     required this.preparation,
     required this.image,
     required this.by,
-    required this.isFavorite,
+    this.isFavorite = false,
   });
+
+  void changeFavorite() {
+    isFavorite = !isFavorite;
+    notifyListeners();
+  }
 }
