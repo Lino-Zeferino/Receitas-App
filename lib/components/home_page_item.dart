@@ -92,11 +92,8 @@ class HomePageItem extends StatelessWidget {
           ),
           Container(
             width: double.infinity,
-            height: 230,
-            //color: Colors.amber,
+            height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
-                reverse: true,
-                // shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemCount: country.length,
                 itemBuilder: (_, i) {
@@ -104,20 +101,17 @@ class HomePageItem extends StatelessWidget {
                 }),
           ),
           const Padding(
-            padding: EdgeInsets.only(
-              top: 16,
-            ),
+            padding: EdgeInsets.only(top: 16, bottom: 4),
             child: Text(
               "Doces Destacadas",
               style: TextStyle(
                 fontSize: 16,
-                // fontWeight: FontWeight.w700,
               ),
             ),
           ),
           Container(
             width: double.infinity,
-            height: 200,
+            height: MediaQuery.of(context).size.height * 0.25,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: sweetProvier.favoriteItem.length,
@@ -141,11 +135,11 @@ class HomePageItem extends StatelessWidget {
                     },
                     splashColor: Colors.black26,
                     child: Stack(
-                        alignment: AlignmentDirectional.bottomCenter,
+                        alignment: AlignmentDirectional.bottomStart,
                         children: [
                           Container(
                             width: size.width,
-                            height: 180,
+                            height: MediaQuery.of(context).size.height * 0.25,
                             margin: const EdgeInsets.only(right: 12),
                             decoration: BoxDecoration(
                               boxShadow: const [
@@ -164,8 +158,8 @@ class HomePageItem extends StatelessWidget {
                           ),
                           Container(
                             padding: const EdgeInsets.only(bottom: 8),
-                            height: 60,
-                            width: size.width * .98,
+                            height: MediaQuery.of(context).size.height * 0.08,
+                            width: size.width,
                             decoration: BoxDecoration(
                               color: Colors.black45,
                               borderRadius: BorderRadius.circular(12),
@@ -174,7 +168,7 @@ class HomePageItem extends StatelessWidget {
                               sweetProvier.favoriteItem[i].title,
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 24,
+                                fontSize: 18,
                               ),
                               textAlign: TextAlign.center,
                             ),

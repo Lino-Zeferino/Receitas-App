@@ -117,91 +117,89 @@ class _DictionaryPageState extends State<DictionaryPage> {
           Padding(
             padding: const EdgeInsets.all(2.0),
             child: SizedBox(
-                height: sizeHeight,
-                child: Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(
-                          top: 16, left: 8, right: 8, bottom: 8),
-                      padding:
-                          const EdgeInsets.only(top: 6, left: 18, bottom: 5),
-                      height: sizeHeight * 0.06,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black45,
-                            blurRadius: 2,
-                          )
-                        ],
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(30),
-                        ),
-                        color: ControllerTheme.istance.opcao
-                            ? Colors.black
-                            : Colors.white,
+              height: sizeHeight,
+              child: Column(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(
+                        top: 16, left: 8, right: 8, bottom: 8),
+                    padding: const EdgeInsets.only(top: 6, left: 18, bottom: 5),
+                    height: sizeHeight * 0.06,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 2,
+                        )
+                      ],
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(30),
                       ),
-                      child: TextField(
-                        controller: controller,
-                        decoration: InputDecoration(
-                          hintText: "Com o que vai se deliciar hoje ?",
-                          filled: false,
-                          border: InputBorder.none,
-                          suffixIcon: IconButton(
-                            alignment: Alignment.topCenter,
-                            onPressed: () {
-                              itemProvider.verificar(controller.text)
-                                  ? null
-                                  : restartAll(itemProvider);
-                            },
-                            icon: itemProvider.verificar(controller.text)
-                                ? Icon(
-                                    Icons.clear_rounded,
-                                    color: ControllerTheme.istance.opcao
-                                        ? Colors.black
-                                        : Colors.white,
-                                  )
-                                : const Icon(Icons.clear_rounded),
-                          ),
-                          prefixIcon: const Icon(
-                            Icons.search,
-                            color: Colors.orange,
-                          ),
-                        ),
-                        onChanged: (value) {
-                          itemProvider.verificar(value)
-                              ? itemProvider.restart()
-                              : itemProvider.searchDictionary(value);
-                        },
-                      ),
+                      color: ControllerTheme.istance.opcao
+                          ? Colors.black
+                          : Colors.white,
                     ),
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      height: sizeHeight * .03,
-                      margin:
-                          const EdgeInsets.only(top: 8, left: 16, bottom: 8),
-                      child: const Text(
-                        "Lista de Alimentos",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
+                    child: TextField(
+                      controller: controller,
+                      decoration: InputDecoration(
+                        hintText: "Com o que vai se deliciar hoje ?",
+                        filled: false,
+                        border: InputBorder.none,
+                        suffixIcon: IconButton(
+                          alignment: Alignment.topCenter,
+                          onPressed: () {
+                            itemProvider.verificar(controller.text)
+                                ? null
+                                : restartAll(itemProvider);
+                          },
+                          icon: itemProvider.verificar(controller.text)
+                              ? Icon(
+                                  Icons.clear_rounded,
+                                  color: ControllerTheme.istance.opcao
+                                      ? Colors.black
+                                      : Colors.white,
+                                )
+                              : const Icon(Icons.clear_rounded),
+                        ),
+                        prefixIcon: const Icon(
+                          Icons.search,
+                          color: Colors.orange,
                         ),
                       ),
+                      onChanged: (value) {
+                        itemProvider.verificar(value)
+                            ? itemProvider.restart()
+                            : itemProvider.searchDictionary(value);
+                      },
                     ),
-                    SizedBox(
-                      height: sizeHeight * .75,
-                      //color: Colors.blue,
-                      child: ListView.builder(
-                          itemCount: item.length,
-                          itemBuilder: (context, i) {
-                            return ChangeNotifierProvider.value(
-                              value: item[i],
-                              child: const DictionaryDetais(),
-                            );
-                          }),
+                  ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    height: sizeHeight * .03,
+                    margin: const EdgeInsets.only(top: 8, left: 16, bottom: 8),
+                    child: const Text(
+                      "Lista de Alimentos",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                  ],
-                )),
+                  ),
+                  SizedBox(
+                    height: sizeHeight * .75,
+                    child: ListView.builder(
+                        itemCount: item.length,
+                        itemBuilder: (context, i) {
+                          return ChangeNotifierProvider.value(
+                            value: item[i],
+                            child: const DictionaryDetais(),
+                          );
+                        }),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),

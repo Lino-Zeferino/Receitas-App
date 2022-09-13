@@ -1,14 +1,8 @@
 // ignore_for_file: non_constant_identifier_names, duplicate_ignore
-
 import 'package:aula02/components/meal_page_item.dart';
 import 'package:aula02/controllers/controller_meals_provider.dart';
 import 'package:aula02/controllers/controller_theme.dart';
-
 import 'package:aula02/models/meal_country_model.dart';
-import 'package:aula02/models/meal_model.dart';
-
-//import 'package:aula02/controllers/controller_theme.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -57,69 +51,45 @@ class _MealsPageState extends State<MealsPage> {
             .toList();
 
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            actions: [
-              PopupMenuButton(
-                icon: const Icon(Icons.more_vert),
-                onSelected: (int selectValue) {
-                  setState(() {
-                    if (selectValue == 0) {
-                      _showFavoriteOnly = true;
-                    } else {
-                      _showFavoriteOnly = false;
-                    }
-                  });
-                },
-                itemBuilder: (_) => [
-                  const PopupMenuItem(
-                    child: Text("Somente favoritos"),
-                    value: 0,
-                  ),
-                  const PopupMenuItem(
-                    child: Text("Todos"),
-                    value: 1,
-                  ),
-                ],
-              )
-            ],
-            leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: const Icon(Icons.arrow_back_ios_new_outlined),
-            ),
-            iconTheme: const IconThemeData(color: Colors.white),
-            pinned: true,
-            backgroundColor: Colors.orange,
-            floating: true,
-            elevation: 0,
-            flexibleSpace: FlexibleSpaceBar(
-              centerTitle: true,
-              title: Text(
-                "Receitas de ${country.country}",
-                style: const TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              background: Image.asset(
-                country.image,
-                fit: BoxFit.cover,
-              ),
-            ),
-            expandedHeight: 200,
+      appBar: AppBar(
+        title: Text(
+          "Receitas de ${country.country}",
+          style: const TextStyle(
+            color: Colors.white,
           ),
-          newSection(sizeHeight, meals, context, countryMeals),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: const Icon(Icons.arrow_back_ios_new_outlined),
+        ),
+        actions: [
+          PopupMenuButton(
+            icon: const Icon(Icons.more_vert),
+            onSelected: (int selectValue) {
+              setState(() {
+                if (selectValue == 0) {
+                  _showFavoriteOnly = true;
+                } else {
+                  _showFavoriteOnly = false;
+                }
+              });
+            },
+            itemBuilder: (_) => [
+              const PopupMenuItem(
+                child: Text("Somente favoritos"),
+                value: 0,
+              ),
+              const PopupMenuItem(
+                child: Text("Todos"),
+                value: 1,
+              ),
+            ],
+          ),
         ],
       ),
-    );
-  }
-
-  Widget newSection(double sizeHeight, List<MealModel> meals,
-      BuildContext context, ControllerMeals Mealprovider) {
-    return SliverToBoxAdapter(
-      child: SizedBox(
+      body: SizedBox(
         width: double.infinity,
         height: sizeHeight,
         child: Column(
@@ -154,11 +124,11 @@ class _MealsPageState extends State<MealsPage> {
                     suffixIcon: IconButton(
                       alignment: Alignment.topCenter,
                       onPressed: () {
-                        Mealprovider.verificar(controller.text)
+                        countryMeals.verificar(controller.text)
                             ? null
-                            : restartAll(Mealprovider);
+                            : restartAll(countryMeals);
                       },
-                      icon: Mealprovider.verificar(controller.text)
+                      icon: countryMeals.verificar(controller.text)
                           ? Icon(
                               Icons.clear_rounded,
                               color: ControllerTheme.istance.opcao
@@ -173,9 +143,9 @@ class _MealsPageState extends State<MealsPage> {
                     ),
                   ),
                   onChanged: (value) {
-                    Mealprovider.verificar(value)
-                        ? Mealprovider.restart()
-                        : Mealprovider.searchMeal(value);
+                    countryMeals.verificar(value)
+                        ? countryMeals.restart()
+                        : countryMeals.searchMeal(value);
                   },
                 ),
               ),

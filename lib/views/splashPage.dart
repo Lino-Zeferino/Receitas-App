@@ -1,10 +1,7 @@
 // ignore_for_file: file_names
-
 import 'dart:async' show Timer;
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'home_page.dart';
 
 class SplashPage extends StatefulWidget {
@@ -16,7 +13,7 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   route() {
-    Navigator.push(
+    Navigator.pushReplacement(
       context,
       PageRouteBuilder(
         pageBuilder: (context, animation, secand) {
@@ -111,7 +108,7 @@ class _SplashPageState extends State<SplashPage> {
                   child: Text(
                     "Conheça as adiversidades dos Pratos",
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
                       color: Colors.orange,
                       fontWeight: FontWeight.bold,
                     ),
@@ -143,9 +140,10 @@ class _SplashPageState extends State<SplashPage> {
                   child: Text(
                     " APLICAÇÃO OKUTELEKA",
                     style: TextStyle(
-                      letterSpacing: 6.4,
+                      letterSpacing: 4,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
+                      fontSize: 12,
                     ),
                   ),
                 ),

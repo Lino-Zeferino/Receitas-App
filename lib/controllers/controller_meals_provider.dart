@@ -32,7 +32,7 @@ class ControllerMeals with ChangeNotifier {
         duration: meal.duration,
         ingredient: meal.ingredient,
         preparation: meal.preparation,
-        image: meal.image,
+        image: meal.url,
         by: meal.by,
       ),
     );

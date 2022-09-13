@@ -1,5 +1,5 @@
 import 'package:aula02/controllers/controller_theme.dart';
-import 'package:aula02/views/menu/add_off.dart';
+
 import 'package:flutter/material.dart';
 
 class AboutDevItem2 extends StatelessWidget {
@@ -15,7 +15,7 @@ class AboutDevItem2 extends StatelessWidget {
           title,
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 13,
+            fontSize: 12,
             fontWeight: FontWeight.w700,
           ),
           textAlign: TextAlign.center,
@@ -32,7 +32,7 @@ class AboutDevItem2 extends StatelessWidget {
       height: size.height * .8,
       // color: Colors.white,
       margin: const EdgeInsets.all(8),
-      child: Column(
+      child: ListView(
         children: [
           //const SizedBox(height: 8),
           MyTitle("PERFIL PROFISSIONAL"),
@@ -57,7 +57,7 @@ class AboutDevItem2 extends StatelessWidget {
             style: TextStyle(
               color:
                   ControllerTheme.istance.opcao ? Colors.white : Colors.black,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
               fontSize: 12,
             ),
           ),
@@ -116,16 +116,7 @@ class AboutDevItem2 extends StatelessWidget {
             height: 12,
             color: Colors.orange,
           ),
-          InkWell(
-            onLongPress: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => const AddMealOff(),
-                  ));
-            },
-            child: MyTitle("OBJETIVO"),
-          ),
+          MyTitle("OBJETIVO"),
           const SizedBox(height: 4),
           Text(
             "Sou um Dev Mobile presistente e altamente dedicado.\nProcurando uma posição nas áreas de Desenvolvidor de Aplicações Mobile(Flutter), para poder dar o meu contributo para o desenvolvimento das TICs .",

@@ -43,16 +43,16 @@ class AboutDev extends StatelessWidget {
                             child: Text(
                               "Lino C. Zeferino",
                               style: TextStyle(
-                                fontSize: 26,
-                                wordSpacing: 8,
-                              ),
+                                  fontSize: 18,
+                                  wordSpacing: 8,
+                                  color: Colors.white),
                             ),
                           ),
                           Center(
                             child: Text(
                               "\tMOBILE AND WEB DEVELOPED",
                               style: TextStyle(
-                                fontSize: 14,
+                                fontSize: 10,
                                 color: Colors.white60,
                                 letterSpacing: 0.8,
                               ),

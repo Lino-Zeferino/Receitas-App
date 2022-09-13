@@ -52,12 +52,22 @@ class MealPageItem extends StatelessWidget {
                       ),
                     );
                   },
-                  child: MyRadiusImage(
-                    largura: double.infinity,
-                    comprimento: 125,
-                    margin: 0.0,
-                    url: meals.image,
-                    circular: 20,
+                  child: Container(
+                    width: double.infinity,
+                    height: 125,
+                    margin: const EdgeInsets.only(right: 0.0),
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                      ),
+                      image: DecorationImage(
+                        image: AssetImage(
+                          meals.image,
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 ),
                 Container(
@@ -114,29 +124,5 @@ class MealPageItem extends StatelessWidget {
   }
 
   // ignore: non_constant_identifier_names
-  Widget MyRadiusImage({
-    required double largura,
-    required double comprimento,
-    required double margin,
-    required String url,
-    required double circular,
-  }) {
-    return Container(
-      width: largura,
-      height: comprimento,
-      margin: EdgeInsets.only(right: margin),
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-        ),
-        image: DecorationImage(
-          image: AssetImage(
-            url,
-          ),
-          fit: BoxFit.cover,
-        ),
-      ),
-    );
-  }
+
 }

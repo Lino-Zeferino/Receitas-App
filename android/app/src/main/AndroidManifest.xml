@@ -2,7 +2,7 @@
 
     package="com.example.aula02">
    <application
-        android:label="aula02"
+        android:label="Okuteleka"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

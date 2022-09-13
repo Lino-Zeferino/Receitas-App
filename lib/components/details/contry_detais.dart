@@ -30,6 +30,7 @@ class ContryListDetais extends StatelessWidget {
         ),
         SizedBox(
           width: size.width * .52,
+          height: size.height * .3,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -68,7 +69,6 @@ class ContryListDetais extends StatelessWidget {
                     style: const TextStyle(
                       color: Colors.white70,
                       fontSize: 12,
-                      //fontWeight: FontWeight.w400,
                     ),
                   ),
                 ),

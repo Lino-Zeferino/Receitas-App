@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unused_local_variable, prefer_collection_literals
+
 import 'dart:io';
 import 'dart:math';
 
@@ -155,7 +157,7 @@ class _AddMealState extends State<AddMeal> {
                                     if (value!.trim().isEmpty) {
                                       return "Informe o nome (campo obrigatório!)";
                                     }
-                                    if (value!.trim().length < 3) {
+                                    if (value.trim().length < 3) {
                                       return "Nome deve ter mais de duas letras";
                                     }
                                     return null;
@@ -216,7 +218,7 @@ class _AddMealState extends State<AddMeal> {
                                     if (value!.trim().isEmpty) {
                                       return "Informe o nome do Prato (campo obrigatório!)";
                                     }
-                                    if (value!.trim().length < 3) {
+                                    if (value.trim().length < 3) {
                                       return "Nome deve ter mais de duas letras";
                                     }
                                     return null;
@@ -275,7 +277,7 @@ class _AddMealState extends State<AddMeal> {
                               if (value!.trim().isEmpty) {
                                 return "Informe os ingredientes (campo obrigatório!)";
                               }
-                              if (value!.trim().length < 10) {
+                              if (value.trim().length < 10) {
                                 return "Os ingredientes deve ter mais de 10 letras";
                               }
                               return null;
@@ -304,7 +306,7 @@ class _AddMealState extends State<AddMeal> {
                               if (value!.trim().isEmpty) {
                                 return "Informe o modo de Preparo (campo obrigatório!)";
                               }
-                              if (value!.trim().length < 15) {
+                              if (value.trim().length < 15) {
                                 return "O modo de Preparo deve ter mais de 15 letras";
                               }
                               return null;
@@ -376,7 +378,7 @@ class _AddMealState extends State<AddMeal> {
       return;
     }
     _form.currentState?.save();
-    final newMeal = MealModel(
+    final _newMeal = MealModel(
       id: Random().nextDouble().toString(),
       title: _formData["mealName"].toString(),
       country: "Diversos",
@@ -388,11 +390,12 @@ class _AddMealState extends State<AddMeal> {
       by: _formData["yourName"].toString(),
     );
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        backgroundColor: Colors.black45,
-        duration: Duration(seconds: 5),
-        content:
-            Text("A sua Receita será avaliada dentro de 72 horas! obrigado"),
+      SnackBar(
+        backgroundColor:
+            ControllerTheme.istance.opcao ? Colors.white : Colors.black54,
+        duration: const Duration(seconds: 5),
+        content: const Text(
+            "A sua Receita será avaliada dentro de 72 horas! obrigado"),
       ),
     );
   }

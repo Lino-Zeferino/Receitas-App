@@ -3,11 +3,24 @@ import 'package:aula02/models/meal_model.dart';
 
 // ignore: non_constant_identifier_names
 final List<CountryModel> DUMMY_COUNTRY = [
+  //Receitas de Angola
   CountryModel(
-    country: "Diversos",
-    description: "Vê as receitas de todo Mundo",
-    image: "assets/images/diverso/Frango frito americano do KFC.jpg",
-    imageCountry: "assets/images/diverso.png",
+    country: "Angola",
+    description: "Encontre as Diversas Receitas de Angola",
+    image: "assets/images/angola/tipicoAngola2.jpg",
+    imageCountry: "assets/images/angola.png",
+  ), // Receitas de Portugal
+  CountryModel(
+    country: "Portugal",
+    description: "Vê as Principais receitas de Portugal",
+    image: "assets/images/portugal/Atum à Gomes de Sá.jpg",
+    imageCountry: "assets/images/portugal.png",
+  ),
+  CountryModel(
+    country: "Brasil",
+    description: "Vê as Principais Receitas de Brasil",
+    image: "assets/images/brasil/Linguiça recheada com vinagrete.jpg",
+    imageCountry: "assets/images/brasil.png",
   ),
   CountryModel(
     country: "França",
@@ -16,29 +29,192 @@ final List<CountryModel> DUMMY_COUNTRY = [
     imageCountry: "assets/images/franca.jpg",
   ),
   CountryModel(
-    country: "Brasil",
-    description: "Vê as Principais Receitas de Brasil",
-    image: "assets/images/brasil/Linguiça recheada com vinagrete.jpg",
-    imageCountry: "assets/images/brasil.png",
-  ),
-  // Receitas de Portugal
-  CountryModel(
-    country: "Portugal",
-    description: "Vê as Principais receitas de Portugal",
-    image: "assets/images/portugal/Atum à Gomes de Sá.jpg",
-    imageCountry: "assets/images/portugal.png",
-  ),
-  //Receitas de Angola
-  CountryModel(
-    country: "Angola",
-    description: "Encontre as Diversas Receitas de Angola",
-    image: "assets/images/angola/tipicoAngola2.jpg",
-    imageCountry: "assets/images/angola.png",
+    country: "Diversos",
+    description: "Vê as receitas de todo Mundo",
+    image: "assets/images/diverso/Frango frito americano do KFC.jpg",
+    imageCountry: "assets/images/diverso.png",
   ),
 ];
-
+////////////////////////////////////////////////////////////////////////////////////////
 // ignore: non_constant_identifier_names
 List<MealModel> DUMMY_MEALS = [
+  MealModel(
+      title: "Arroz com legumes e ovo",
+      country: "Diversos",
+      people: "8 pessoas",
+      duration: "45min",
+      ingredient:
+          "1- 2 xícaras de arroz cru (lavado e escorrido) \n\n1-   1 colher de sopa de óleo (ou azeite de oliva) \n\n2-   3 colheres de sopa de bacon picadinho \n\n3-   1 dente de alho picado \n\n4-   2 colheres de sopa de cebola picada \n\n5-   ½ xícara de presunto picadinho \n\n6-   2 cubos de caldo de carne (ou galinha) \n\n7-   4 xícaras de água fervente \n\n8-   2 unidades de ovo mexido \n\n9-   1 lata de seleta de legumes \n\n10-   3 colheres de sopa de cebolinha picada",
+      preparation:
+          "Para preparar arroz com legumes e ovo, comece por aquecer o óleo (ou azeite) em fogo médio. Junte o bacon e cozinhe até dourar. Adicione a cebola e o alho e deixe refogar.\n\nDe seguida, junte o arroz e o presunto e deixe fritar por 3 minutos. Adicione o caldo de carne, previamente dissolvido na água fervente, com o ovo mexido e os legumes. Cozinhe em fogo baixo até o caldo evaporar.\n\nJunte a cebolinha picada, misture tudo e o arroz de legumes e ovo está pronto a comer! \n",
+      image: "assets/images/diverso/Arroz com legumes e ovo.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Arroz com legumes",
+      country: "Diversos",
+      people: "4 pessoas",
+      duration: "40min",
+      ingredient:
+          "1-  2 xícaras Arroz Novato lavado \n\n2-   4 xícaras água  fervente \n\n3-   2 dentes  alho amassado \n\n4-   1/2 cebola picada \n\n5-   150g ervilha \n\n6-   150g milho \n\n7-   150g vagem picada \n\n8-   150g cenoura picada \n\n9-   Azeite \n\n10-   Sal a gosto",
+      preparation:
+          "1 – Refogue o alho e a cebola no azeite\n\n 2 – Coloque o arroz e deixe fritar por cerca de 30 segundos\n\n 3 – Adicione a água fervente juntamente com os legumes e o sal\n\n 4 – Abaixe o fogo e deixe cozinhar até a água ter quase secado\n\n 5 -Tampe a panela e aguarde cerca de 20 minutos antes de servir\n\n Se desejar fazer mais, é só seguir as proporções, principalmente da água.\n",
+      image: "assets/images/diverso/Arroz com legumes.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Batatas fritas",
+      country: "Diversos",
+      people: "4 pessoas",
+      duration: "30min",
+      ingredient:
+          "1-  2 xícaras de água morna \n\n2- ⅓ xícara de açúcar branco \n\n3- 2 batatas grandes - descascadas e cortadas em tiras de 1/4 \n\n4- polegada \n\n5- 6 xícaras de óleo vegetal para fritar \n\n6- sal a gosto",
+      preparation:
+          "Misture a água morna e o açúcar em uma tigela média. Mergulhe as batatas na mistura de água por 15 minutos. Retire as batatas da água e seque bem em papel toalha.\n\nAqueça o óleo em uma fritadeira a 375 graus F (190 graus C).\n\nCozinhe as batatas em óleo quente até dourar, 5 a 6 minutos. Escorra em papel toalha e tempere com sal.\n",
+      image: "assets/images/diverso/Batatas fritas.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Picanha grelhada",
+      country: "Diversos",
+      people: "4 pessoas",
+      duration: "30min",
+      ingredient: "1-   1 kg de picanha embalada\n\n2-   qb de sal",
+      preparation:
+          "Tire a picanha do frio e retire-a da embalagem.\n\n Deixe repousar por 10 minutos.\n\n Corte a picanha em fatias de 2 dedos.\n\n Tempere com sal grosso antes de colocar na grelha.\n\n Grelhe até estar no ponto que aprecia.\n\n Sirva.\n",
+      image: "assets/images/diverso/Picanha grelhada.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Bife de panela",
+      country: "Diversos",
+      people: "5 pessoas",
+      duration: "35min",
+      ingredient:
+          "1-   1/2 kg de bife \n\n 2-   4 colheres (sopa) de azeite \n\n 3-   1 cebola ralada \n\n 4-   4 dentes de alho amassados \n\n 5-   1 pimentão vermelho cortado em cubos pequenos \n\n 6-   4 colheres (sopa) de molho inglês \n\n 7-   1 1/2 xícara (chá) de caldo de carne fervente",
+      preparation:
+          " Em uma panela esquente bem o óleo e doure os bifes de um lado e de outro, coloque a cebola, o alho e o pimentão e deixem ambos tostarem\n\n Quando estiverem bem douradinhos coloque o molho inglês e o caldo de carne fervente e deixe cozinhar um pouco até que o caldo de uma boa engrossada  Bom Apetite.\n",
+      image: "assets/images/diverso/Bife de panela.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Pizza de presunto e queijo",
+      country: "Diversos",
+      people: "2 pessoas",
+      duration: "35min",
+      ingredient:
+          "● Farinha - Dá consistência e é a base da massa. \n\n   ● Água - Para misturar a farinha. \n\n   ● Sal - Para temperar a massa. \n\n   ● Presunto fatiado, queijo mozzarella fresco e parmesão ralado - Para dar \n\n   sabor e decorar a pizza. \n\n   ● Polpa de tomate - Molho da pizza. Dá cor e sabor à comida. \n\n   ● Orégãos - Para dar sabor.",
+      preparation:
+          "Numa taça, misture com uma colher a farinha, a água e o sal\n\nColoque a massa em cima de uma mesa polvilhada com farinha, polvilhe a massa com um pouco mais de farinha e amasse-a muito bem até ficar totalmente envolvida.\n\nCom o rolo da massa molde a massa em forma de pizza.\n\nColoque a massa sobre o tabuleiro forrado com papel vegetal. Barre a massa com polpa de tomate e polvilhe com orégãos e metade do queijo parmesão ralado. Decore com presunto fatiado cortado em pedaços, pedaços de mozzarella e polvilhe com o restante queijo ralado.\n\nLeve ao forno cerca de 15 a 20 minutos.\n\nDesligue o forno e sirva.\n",
+      image: "assets/images/diverso/Pizza de presunto e queijo.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Fango no forno com molho delicioso",
+      country: "Diversos",
+      people: "4 pessoas",
+      duration: "2:20min",
+      ingredient:
+          "● Frango \n\n   ● Massa de pimentão \n\n   ● Azeite \n\n   ● Mostarda Dijon \n\n   ● Pimenta \n\n   ● Alhos \n\n   ● Noz-moscada \n\n   ● Louro \n\n   ● Sal",
+      preparation:
+          "Numa taça misture o azeite, os alhos picados, mostarda Dijon, massa de pimentão, pimenta e noz-moscada. Coloque o frango numa assadeira, tempere com sal e regue com o molho.\n\nDeixe marinar cerca de uma hora. Leve o frango ao forno até começar a dourar, cerca de 1 hora e 15 minutos. De vez em quando, regue o frango com o molho. Desligue o forno e sirva com puré de batata ou arroz branco.\n\n",
+      image: "assets/images/diverso/Fango no forno com molho delicioso.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Massa com linguiça e ovos",
+      country: "Diversos",
+      people: "2 pessoas",
+      duration: "15min",
+      ingredient:
+          "1-   500 g de esparguete \n\n2-   sal q.b. \n\n3-   1 cebola \n\n4-   azeite q.b. \n\n5-   6 linguiças \n\n6-   1 c. chá de alho em pó \n\n7-   1 gema \n\n8-   300 ml de natas \n\n9-   4 ovos \n\n10-   salsa q.b.",
+      preparation:
+          "Numa panela grande, refogue a cebola picada finamente num fio de azeite.\n\n Quando estiver bem tenra, junte as linguiças cortadas em rodelas finas e frite-as até ficarem bem douradas, mexendo sempre.\n\n Tempere-as com o alho em pó e envolva bem.\n\n Junte a gema batida, as natas e a massa cozida e misture bem.\n\n Verta o preparado para um tabuleiro.\n\n Parta os ovos por cima da massa e leve-a ao forno pré-aquecido a 180ºC até as claras ficarem sólidas mas as gemas continuarem cremosas.\n\n Retire e sirva de imediato polvilhado com salsa picada.\n\n Coza o esparguete segundo as instruções da embalagem em água abundante temperada com sal.\n\n Quando estiver cozido, escorra-o e reserve.\n",
+      image: "assets/images/diverso/Massa com linguiça e ovos.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Sopa de carne moída com macarrão",
+      country: "Diversos",
+      people: "6 pessoas",
+      duration: "30min",
+      ingredient:
+          "1-   3 batatas \n\n2-   2 cenouras \n\n3-   1 abóbora paulista \n\n4-   200 g de carne moída \n\n5-   200 g do macarrão de sua preferência \n\n6-   Água (varia de acordo com seu gosto, se prefere sopas mais enxutas ou aguadas) \n\n7-   Folhas de louro a gosto \n\n8-   Sal e pimenta a gosto \n\n9-   1 cebola média picada \n\n10-   3 dentes de alho picados",
+      preparation:
+          "Descasque e pique os legumes em cubos pequenos. Reserve Em uma panela grande frite o alho e a cebola até a cebola começar a dourar Acrescente a carne moída na panela e mexa bem para que ela fique bem soltinha\n\n Quando a carne perder o tom vermelho, acrescente os legumes já lavados e picados em cubos pequenos\n\n Doure até começar a caramelizar o fundo da panela (é esse processo que vai dar sabor à sua sopa)\n\n Acrescente a folha de louro\n\n Tempere com sal e pimenta do reino a gosto\n\n Adicione a água até cobrir os legumes, tampe a panela e deixe cozinhar Fique sempre de olho na panela para não deixar faltar água. Se secar, acrescente aos poucos apenas para cobrir os legumes\n\n Quando os legumes ficarem ao dente, acrescente mais água (até ficar 2 dedos acima dos legumes)\n\n Acrescente o macarrão e cozinhe-o até ficar macio, se faltar água, acrescente mais\n\n Se desejar mais caldo, coloque mais água Sirva imediatamente\n\n Queijo ralado e torrada são ótimos acompanhamentos para esta sopa\n",
+      image: "assets/images/diverso/Sopa de carne moída com macarrão.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Asinhas de frango panadas",
+      country: "Diversos",
+      people: "4 pessoas",
+      duration: "35min",
+      ingredient:
+          "1-  650 g de asinhas de frango \n\n2-   Sumo de 1 limão \n\n3-   1 colher de chá de ervas finas secas \n\n4-   1 colher de chá de pimentão doce \n\n5-   1 pitada de piripíri em pó \n\n6-   1/4 de colher de chá de alho em pó \n\n7-   Sal e pimenta-preta q.b. \n\n8-   Farinha de trigo q.b. \n\n9-   2 ovos \n\n10-   Pão ralado q.b. \n\n11-   Óleo de amendoim q.b.",
+      preparation:
+          ". Cortar as asinhas de frango pelas articulações, descartando a ponta.\n\n 2. Temperar a carne com sal, pimenta, sumo de limão, ervas finas, pimentão-doce, o alho e uma pitada de piripíri. Mexer. Deixar a carne a marinar, durante 2 a 3 horas no frigorífico, ou de um dia para o outro \n\n 3. Passar as asinhas de frango por farinha, de seguida por ovo batido e por fim, pelo pão ralado.\n\n 4. Fritar em óleo bem quente. À medida que se fritam, colocar em papel absorvente.\n",
+      image: "assets/images/diverso/Asinhas de frango panadas.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Carne mista na Tabua",
+      country: "Diversos",
+      people: "4 pessoas",
+      duration: "40min",
+      ingredient:
+          "1-   100 g medalhões do lombo de novilho \n\n2-   100 g costeleta de cordeiro \n\n3-   80 g de peito de frango \n\n4-   1 linguiça toscana",
+      preparation:
+          "Grelhe as carnes e coloque na tábua, sobre folhas de alface.\n\nAcompanha com maionese de alho e ervas e batatas palha.\n\n Decoração com pickles, azeitona preta e morango.",
+      image: "assets/images/diverso/Carne mista na Tabua.PNG",
+      by: "@Okuteleka"),
+
+  MealModel(
+      title: "Choco Grelhado com Molho de Manteiga",
+      country: "Diversos",
+      people: " pessoas",
+      duration: "duration",
+      ingredient:
+          "1-  Chocos frescos \n\n2-  Sal \n\n3-  Manteiga ou margarina de culinária \n\n4-  Sumo de limão q.b \n\n5-  Cebola picada \n\n6-  Salsa picada",
+      preparation:
+          "Limpe os chocos e tempere de sal. Grelhe-os no carvão ou na chapa até que esteja dourado de ambos os lados.\n\n Prepare o molho, derretendo um pouco de manteiga numa frigideira em lume brando sem deixar ferver para que não queime.\n\n Adicione algumas gotas de sumo de limão a gosto e deite algumas colheres deste preparado por cima dos chocos e das batatas cozidas que acompanham este prato.\n\n Polvilhe com cebola e salsa picada e sirva de imediato.\n",
+      image: "assets/images/diverso/Choco Grelhado com Molho de Manteiga.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Hamburguer",
+      country: "Diversos",
+      people: "10 pessoas",
+      duration: "30min",
+      ingredient:
+          "1-  500 gramas de carne moída ou guisado de primeira ou de uma carne magra como patinho \n\n2-   500 gramas de carne moída ou guisado de segunda ou de uma carne com mais gordura \n\n3-   1 cebola branca grande \n\n4-   2 dentes de alho \n\n5-   Sal a gosto \n\n6-   Pimenta do reino a gosto",
+      preparation:
+          "O preparo é relativamente simples: o primeiro passo é picar a cebola e o alho finamente, bem pequeno mesmo. Depois, em uma tigela grande, misture os dois tipos de carne, a cebola picada e os dentes de alho picados com as mãos.\n\n Misture bem mesmo! Tempere com sal e pimenta do reino a gosto e misture novamente. \n\n Agora basta pegar a carne e modelar em formato de bife de hamburguer. Para facilitar, nós temos um truque: separe outra tigela pequena e após pegar uma “mãozada” de carne, faça uma bola e atire dentro dessa tigela \n\n É para atirar mesmo, então deixe em uma superfície que não vá quebrar ou cair. Isso irá ajudar a compactar o hamburguer para que ele não se quebre em pedaços. Modele os seus bifes de hamburguer conforme o seu desejo.\n\n Com essa quantidade de carne, você pode fazer até 10 bifes de 100 gramas mais ou menos grossos, mas também é possível fazer mais ou menos, isso só depende de você.\n\n Caso queira, você também pode congelar esses bifes de hamburguer por semanas no freezer – e não é necessário descongelar cada um deles antes de levar ao forno ou à panela para fritar, tire do freezer e leve diretamente ao fogo. Para congelar os bifes de hamburguer, após modelar, enrole com filme-plástico com cuidado para que nenhuma parte fique descoberta.\n\nPara assar, leve ao forno bem quente em uma forma com um pingo de óleo por cerca de 20 minutos – ajuste de acordo com o ponto de carne desejado. Você também pode fritá-lo: para isso, utilize uma panela antiaderente, deixe-a bem quente, coloque o óleo e frite um ou dois bifes por vez.\n\n Ao fritar, no primeiro momento, o bife de hamburguer irá grudar na panela, mas não se preocupe, logo irá soltar. Quando isso acontecer, vire e faça o mesmo do outro lado. \n\n Agora é só você montar o hamburguer completo da sua maneira. Para algo bem clássico e simples, recomendamos começar com pão, maionese, alface, hamburguer, tomate, cebola roxa, e queijo derretido!\n ",
+      image: "assets/images/diverso/Hamburguer.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Arroz de marisco",
+      country: "Diversos",
+      people: "5 pessoas",
+      duration: "1:40min",
+      ingredient:
+          "1-  400 g de arroz carolino \n\n2-   300 g de patas de sapateira \n\n3-   300 g de mexilhão com meia concha \n\n4-   300 g de miolo de marisco \n\n5-   300 g de amêijoas \n\n6-   4 camarões \n\n7-   200 g de polpa de tomate \n\n8-   150 g de tomate pelado picado \n\n9-   1 cebola \n\n10-   2 dentes de alho \n\n11-   50 ml de azeite \n\n12-   1 folha de louro \n\n13-   Coentros q.b. \n\n14-   Sal e piripiri q.b",
+      preparation:
+          "Leve ao lume um tacho com o azeite, a cebola e os dentes de alho picados e refogue.\n\n Junte a folha de louro, um ramo de coentros, a polpa de tomate e o tomate picado e deixe refogar bem.\n\n  Adicione 1,2 l de água, tempere com sal e, quando estiver a ferver, acrescente os mariscos, previamente descongelados, e deixe ferver novamente.\n\n Junte o arroz, mexa, retifique o sal e tempere com um pouco de piripíri.\n\n Deixe cozinhar, durante cerca de 15 a 18 minutos.\n\n Retire do lume e sirva de imediato, polvilhado com coentros picados",
+      image: "assets/images/diverso/Arroz de marisco.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Cachorro Quente",
+      country: "Diversos",
+      people: "10 pessoas",
+      duration: "30min",
+      ingredient:
+          "1-   300 g de salsicha \n\n2-  1 cebola \n\n3-  1 tomate \n\n4-  1 colher de manteiga \n\n5-  1 copo de extrato de tomate \n\n6-  1 caixa de creme de leite \n\n7-  1/2 medida do copo de extrato de tomate de água",
+      preparation:
+          "Pique a cebola e o tomate, refogue bem na manteiga.\n\n Acrescente o extrato de tomate, corte a salsicha em rodelas e deixe cozinhar a gosto, se presiso acrescente a medida de água.\n\n Depois de cozinhar bem acrescente o creme de leite.\n\n E é so servir.\n\n Acrescente batata palha, milho verde, catchup e maionese.\n\n Fica espetacular.\n",
+      image: "assets/images/diverso/Cachorro Quente.PNG",
+      by: "@Okuteleka"),
+  MealModel(
+      title: "Moqueca de Bacalhau",
+      country: "Diversos",
+      people: "4 pessoas",
+      duration: "1h",
+      ingredient:
+          "1-   4 postas de bacalhau demolhado \n\n2-  Azeite q.b. \n\n3-  1 cebola \n\n4-  Alho a gosto \n\n5-  4 tomates maduros migados \n\n6-  1 pimento cortado \n\n7-  Óleo de palma a gosto \n\n8-  1 folha de louro \n\n9-  Coentros picados a gosto \n\n10-  Leite de coco a gosto \n\n11-  Sal q.b. \n\n12-  Picante a gosto",
+      preparation:
+          "Comece por dar uma pequena fervura ao bacalhau em água. Assim que começar a ferver retire do lume e reserve a água do bacalhau e o bacalhau em separado.\n\n Entretanto faça um refogado com azeite, cebola e o alho. Quando estiver refogado, adicione o tomate migado, o pimento cortado em pequenas tiras e deixe novamente cozinhar por alguns minutos.\n\n Adicione um pouco de água de ferver o bacalhau, (a quantidade de água varia consoante o molho deixado pelo  tomate) tempere com o sal necessário, óleo de palma, louro, picante, metade dos coentros picados e deixe ferver até ganhar alguma consistência.\n\n Por fim junte as postas de bacalhau e o leite de coco e deixe cozinhar mais alguns minutos até ficar apurado a seu gosto (não esqueça de retificar os temperos antes de tirar do lume).\n\n Polvilhe com os restantes coentros antes de servir.\n Acompanhe a moqueca a seu gosto (eu acompanhei com batata doce e espinafres salteados assim como azeitonas para lhe dar um toque tradicional português).\n",
+      image: "assets/images/diverso/Moqueca de Bacalhau.PNG",
+      by: "@Okuteleka"),
+  //////////////////////////////////////////////
   MealModel(
     id: "m54",
     title: "Sopa minestra italiana",

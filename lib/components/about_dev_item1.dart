@@ -4,30 +4,35 @@ import 'package:flutter/material.dart';
 class AboutDevItem1 extends StatelessWidget {
   const AboutDevItem1({Key? key}) : super(key: key);
   Widget informacoes(String txt1, String txt2) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Text(
-          txt1,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 13,
+    return SizedBox(
+      width: double.infinity,
+      height: 20,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(
+            txt1,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+            ),
           ),
-        ),
-        Text(
-          txt2,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 13,
+          Text(
+            txt2,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+            ),
+            textAlign: TextAlign.justify,
           ),
-          textAlign: TextAlign.justify,
-        ),
-      ],
+        ],
+      ),
     );
   }
 
   Widget myTitle(String title) {
     return Container(
+      width: double.infinity,
       height: 20,
       color: Colors.orange,
       child: Center(
@@ -35,7 +40,7 @@ class AboutDevItem1 extends StatelessWidget {
           title,
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 13,
+            fontSize: 12,
             fontWeight: FontWeight.w700,
           ),
           textAlign: TextAlign.center,
@@ -87,7 +92,6 @@ class AboutDevItem1 extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(left: 5),
           width: size.width * .12,
-          // color: Colors.blue,
           child: Text(
             txt,
             style: const TextStyle(
@@ -116,7 +120,7 @@ class AboutDevItem1 extends StatelessWidget {
       width: size.width * .45,
       height: size.height * .8,
       color: Colors.black54,
-      child: Column(
+      child: ListView(
         children: [
           const SizedBox(
             height: 12,
@@ -125,19 +129,19 @@ class AboutDevItem1 extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-          informacoes("Data Nascimento", "22/03/1999"),
+          informacoes("Nascimento:", "22/03/1999"),
           const SizedBox(
             height: 8,
           ),
-          informacoes("Nacionalidade", "Angolana"),
+          informacoes("Nacionalidade:", "Angolana"),
           const SizedBox(
             height: 8,
           ),
-          informacoes("Cidade Actual", "Luanda"),
+          informacoes("Cidade Actual:", "Luanda"),
           const SizedBox(
             height: 8,
           ),
-          informacoes("Municipio actual", "Viana"),
+          informacoes("Municipio actual:", "Viana"),
           const SizedBox(
             height: 20,
           ),

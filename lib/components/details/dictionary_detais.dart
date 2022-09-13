@@ -46,70 +46,71 @@ class DictionaryDetais extends StatelessWidget {
                   url: item.image,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8, right: 2, bottom: 4),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        width: size.width * .56,
-                        //color: Colors.blue,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(
-                              width: size.width * .42,
-                              height: 40,
-                              child: Text(
-                                item.title,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    fontSize: 24, color: Colors.white),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8, right: 2, bottom: 4),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: size.width * .56,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(
+                                width: size.width * .42,
+                                height: 40,
+                                child: Text(
+                                  item.title,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                      fontSize: 24, color: Colors.white),
+                                ),
                               ),
-                            ),
-                            CircleAvatar(
-                              backgroundColor: Colors.white70,
-                              child: IconButton(
-                                onPressed: () {
-                                  item.changeFavorite();
-                                },
-                                icon: item.isFavorite
-                                    ? const Icon(
-                                        Icons.favorite,
-                                        color: Colors.orange,
-                                      )
-                                    : const Icon(
-                                        Icons.favorite_border,
-                                        color: Colors.orange,
-                                      ),
+                              CircleAvatar(
+                                backgroundColor: Colors.white70,
+                                child: IconButton(
+                                  onPressed: () {
+                                    item.changeFavorite();
+                                  },
+                                  icon: item.isFavorite
+                                      ? const Icon(
+                                          Icons.favorite,
+                                          color: Colors.orange,
+                                        )
+                                      : const Icon(
+                                          Icons.favorite_border,
+                                          color: Colors.orange,
+                                        ),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(bottom: 6.0),
-                      child: Text(
-                        "Componentes Nutritivos:",
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 6.0),
+                        child: Text(
+                          "Componentes Nutritivos:",
+                          style: TextStyle(fontSize: 16, color: Colors.white),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: size.height * .08,
-                      width: size.width * .56,
-                      child: Text(
-                        item.nutrient,
-                        textAlign: TextAlign.left,
-                        overflow: TextOverflow.fade,
-                        style: const TextStyle(
-                            color: Colors.black87, fontSize: 14),
+                      SizedBox(
+                        height: size.height * .08,
+                        width: size.width * .56,
+                        child: Text(
+                          item.nutrient,
+                          textAlign: TextAlign.left,
+                          overflow: TextOverflow.fade,
+                          style: const TextStyle(
+                              color: Colors.black87, fontSize: 14),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],

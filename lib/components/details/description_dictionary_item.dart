@@ -33,7 +33,6 @@ class DescriptionDiripctionary extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 233.0),
               child: Card(
-                //color: Colors.amber,
                 elevation: 2.8,
                 shadowColor: Colors.black,
                 child: SizedBox(
@@ -109,7 +108,7 @@ class DescriptionDiripctionary extends StatelessWidget {
                               Mytitle("Recomentações: "),
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    left: 8.0, top: 2, bottom: 50),
+                                    left: 8.0, top: 2, bottom: 70),
                                 child: Text(
                                   item.recommendation,
                                   style: TextStyle(
@@ -147,7 +146,7 @@ class DescriptionDiripctionary extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30.0, left: 55),
+              padding: const EdgeInsets.only(top: 30.0, left: 50),
               child: CircleAvatar(
                 backgroundColor: Colors.orange.shade100,
                 radius: 140,
